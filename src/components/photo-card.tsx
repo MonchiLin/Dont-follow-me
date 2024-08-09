@@ -4,7 +4,6 @@ import {HiOutlineDownload} from "react-icons/hi";
 import {PhotoInfo} from "@/utilities/photo-info";
 import {appStates} from "@/utilities/app-states";
 import {useSetRecoilState} from "recoil";
-import {PagesProgressBar as ProgressBar} from 'next-nprogress-bar';
 
 type Props = {
   photo: PhotoInfo

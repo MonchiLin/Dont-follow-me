@@ -1,5 +1,5 @@
 import {Tags} from "exifreader";
-import FileSaver from 'file-saver';
+import FileSaver, {saveAs} from 'file-saver';
 import {nanoid} from "nanoid";
 import NProgress from "nprogress";
 import JSZip from "jszip";

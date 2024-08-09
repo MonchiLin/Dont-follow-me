@@ -36,7 +36,7 @@ export function PhotoZone(props: Props) {
               blobResult = file
             } else {
               console.error("unknown file type", file)
-              return Promise.resolve()
+              return Promise.reject()
             }
 
             const tags = await ExifReader.load(await file.arrayBuffer())
