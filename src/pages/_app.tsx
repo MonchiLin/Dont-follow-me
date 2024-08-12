@@ -12,7 +12,7 @@ export default function App({Component, pageProps}: AppProps) {
     <RecoilRoot>
       <NextUIProvider>
         <Head>
-          <title>黑凤梨</title>
+          <title>凤梨</title>
         </Head>
         <Component {...pageProps} />
         <PhotoExifView/>
