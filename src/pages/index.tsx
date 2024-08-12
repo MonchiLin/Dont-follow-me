@@ -32,7 +32,7 @@ export default function Home(props: InferGetServerSidePropsType<typeof getServer
       <PhotoGallery photos={photos}/>
       {
         (photos.length !== 0) && <div className="fixed bottom-10 right-10 rounded-full shadow-lg hover:bg-blue-600 focus:outline-none">
-          <Button onClick={downloadAll} className={"bg-gradient-to-tr from-pink-500 to-yellow-500 text-white"} radius={"full"} aria-label="Like">
+          <Button onClick={downloadAll} className={"bg-gradient-to-tr from-[#cfc6ca] to-[#232017] text-white"} radius={"full"} aria-label="Like">
             <HiOutlineDownload/> All
           </Button>
         </div>

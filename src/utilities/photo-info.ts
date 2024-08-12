@@ -12,12 +12,14 @@ export class PhotoInfo {
   convertedBlobURI: string;
 
   // exif 信息
-  exif: Tags
+  originalExif: Tags
+  privacySecurityExif: Tags
 
-  constructor(sourceFile: File, convertedBlobURI: string, exif: Tags) {
+  constructor(sourceFile: File, convertedBlobURI: string, originalExif: Tags, privacySecurityExif: Tags) {
     this.sourceFile = sourceFile
     this.convertedBlobURI = convertedBlobURI
-    this.exif = exif
+    this.originalExif = originalExif
+    this.privacySecurityExif = privacySecurityExif
   }
 
   static async download(photoInfo: PhotoInfo) {

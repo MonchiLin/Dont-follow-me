@@ -8,6 +8,7 @@ import {motion} from "framer-motion";
 import classNames from "classnames";
 import ExifReader from 'exifreader';
 import {PhotoInfo} from "@/utilities/photo-info";
+import {image2jpeg} from "@/utilities/image2jpeg";
 
 type Props = {
   onChange: (photoInfos: PhotoInfo[]) => void
@@ -33,18 +34,20 @@ export function PhotoZone(props: Props) {
                 toType: "image/jpeg",
               }) as Blob
             } else if (file.type.startsWith("image")) {
-              blobResult = file
+              blobResult = await image2jpeg(file)
             } else {
               console.error("unknown file type", file)
               return Promise.reject()
             }
 
-            const tags = await ExifReader.load(await file.arrayBuffer())
+            const originalExif = await ExifReader.load(await file.arrayBuffer())
+            const privacySecurityExif = await ExifReader.load(await blobResult.arrayBuffer())
 
             const photoInfo = new PhotoInfo(
               file,
               URL.createObjectURL(blobResult),
-              tags
+              originalExif,
+              privacySecurityExif,
             )
 
             return Promise.resolve(photoInfo)
