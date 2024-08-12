@@ -1,11 +1,10 @@
 import {InferGetServerSidePropsType} from "next";
 import dynamic from "next/dynamic";
 import {PhotoGallery} from "@/components/photo-gallery";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import {PhotoInfo} from "@/utilities/photo-info";
 import {HiOutlineDownload} from "react-icons/hi";
 import {Button} from "@nextui-org/react";
-import NProgress from "nprogress";
 
 const PhotoZone = dynamic(
   () => import('../components/photo-zone').then(({PhotoZone}) => PhotoZone),
