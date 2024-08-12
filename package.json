@@ -10,7 +10,7 @@
   },
   "type": "module",
   "dependencies": {
-    "@nextui-org/react": "^2.4.2",
+    "@nextui-org/react": "2.4.0",
     "classnames": "^2.5.1",
     "exifreader": "^4.23.3",
     "file-saver": "^2.0.5",
